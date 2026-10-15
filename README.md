@@ -4,6 +4,8 @@ ctxtrim shrinks what a coding agent reads. Large logs, test runs, and file dumps
 
 It is a command-line tool and an [MCP](https://modelcontextprotocol.io) server. Both speak the same operations.
 
+Works out of the box with [AtmoRouter](https://atmorouter.dev), an affordable OpenRouter alternative.
+
 ## Quickstart
 
 Requires Node.js 20 or newer.
@@ -208,11 +210,9 @@ npm run build
 
 Tests use Node's built-in runner and never call a live provider. `npm run dev -- shrink --help` runs the TypeScript entry through `tsx`.
 
-## Powered by AtmoRouter (https://atmorouter.dev)
+## Powered by AtmoRouter, a cheap AI API gateway and OpenRouter alternative
 
-ctxtrim talks to any OpenAI-compatible chat completions endpoint. Out of the box it sends glosses to AtmoRouter with the model `zai/glm-5.3`, which keeps the summary step cheaper than the coding model that has to read it.
-
-Powered by AtmoRouter (https://atmorouter.dev)
+Out of the box ctxtrim sends glosses to AtmoRouter with `zai/glm-5.3`, keeping the summary step cheaper than the coding model; any OpenAI-compatible endpoint works via `CTXTRIM_BASE_URL`. [AtmoRouter](https://atmorouter.dev) is a [cheap AI API gateway](https://atmorouter.dev) that speaks both the OpenAI Chat Completions API and the Anthropic Messages API, so one key reaches 100+ models from Cursor, Cline, Claude Code, or any compatible client. It is pay-per-token with no subscription, accepts QRIS and USDC, and prices sit well below official rates: AtmoRouter advertises an average of 83.7% below official prices, which makes it an affordable LLM API and a practical OpenRouter alternative for agent workloads.
 
 ## Credit
 
